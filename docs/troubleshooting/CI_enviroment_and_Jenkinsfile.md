@@ -143,7 +143,7 @@ pip install -r requirements.txt
 pip install allure-pytest
 ```
 
-### Jenkinsfile 수
+### Jenkinsfile 수정
 
 - `cleanWs()` 단계 제거
 - 가상환경 생성 및 패키지 설치 로직 제거
