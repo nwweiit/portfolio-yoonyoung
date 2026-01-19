@@ -1,5 +1,7 @@
 # CI 환경 구성 및 Jenkins 안정화 이슈
 
+---
+
 ## 문제 상황
 
 Jenkins 기반 CI 환경에서 `pytest` 실행 및 `Allure` 리포트 자동 생성을 구성하던 중,  
