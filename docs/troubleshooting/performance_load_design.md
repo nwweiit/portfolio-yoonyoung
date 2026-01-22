@@ -108,24 +108,24 @@ ramp-up을 40초로 늘린 뒤 다음과 같은 부하 구간을 단계적으로
 <table align="center">
   <tr>
     <td align="center">
-      <img src="assets/images/performance_1000_40_30.png" width="300">
+      <img src="portfolio-yoonyoung/assets/images/performance_1000_40_30.png" width="300">
       <br>
       <sub>1000_40_30_TPS</sub>
     </td>
     <td align="center">
-      <img src="assets/images/performance_1100_40_30.png" width="300">
+      <img src="portfolio-yoonyoung/assets/images/performance_1100_40_30.png" width="300">
       <br>
       <sub>1100_40_30_TPS</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="assets/images/performance_1200_40_30.png" width="300">
+      <img src="portfolio-yoonyoung/assets/images/performance_1200_40_30.png" width="300">
       <br>
       <sub>1200_40_30_TPS</sub>
     </td>
     <td align="center">
-      <img src="assets/images/performance_1300_40_30.png" width="300">
+      <img src="portfolio-yoonyoung/assets/images/performance_1300_40_30.png" width="300">
       <br>
       <sub>1300_40_30_TPS</sub>
     </td>
