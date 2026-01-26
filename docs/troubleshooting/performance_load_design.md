@@ -104,34 +104,24 @@ ramp-up을 40초로 늘린 뒤 다음과 같은 부하 구간을 단계적으로
 - `1200 / 40 / 30` : 처리량 하락 시작, 일부 500 오류 발생
 - `1300 / 40 / 30` : 연결 실패 및 다수 500 오류 발생 (완전 붕괴)
 
+아래 TPS 그래프를 통해 **처리량 상한 구간(Upper)** 과 **완전 붕괴 구간(Stress)** 의 차이를 시각적으로 비교.
 
 <table align="center">
   <tr>
     <td align="center">
-      <img src="../../assets/images/performance_1000_40_30.png" width="300">
+      <img src="../../assets/images/performance_1100_40_30.png" width="350">
       <br>
-      <sub>1000_40_30_TPS</sub>
+      <sub>1100 / 40 / 30 (Upper)</sub>
     </td>
     <td align="center">
-      <img src="../../assets/images/performance_1100_40_30.png" width="300">
+      <img src="../../assets/images/performance_1300_40_30.png" width="350">
       <br>
-      <sub>1100_40_30_TPS</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="../../assets/images/performance_1200_40_30.png" width="300">
-      <br>
-      <sub>1200_40_30_TPS</sub>
-    </td>
-    <td align="center">
-      <img src="../../assets/images/performance_1300_40_30.png" width="300">
-      <br>
-      <sub>1300_40_30_TPS</sub>
+      <sub>1300 / 40 / 30 (Stress)</sub>
     </td>
   </tr>
 </table>
 
+동일한 ramp-up 조건에서 1100 구간에서는 처리량 상한이 유지되었으나 1300 구간에서는 처리량 하락과 함께 다수 오류가 발생하며 시스템 붕괴 양상이 관측됨.
 
 이를 통해 기존에 안정 구간으로 판단했던 **200 사용자 기준이 과도하게 보수적인 값**이었음을 확인.
 
