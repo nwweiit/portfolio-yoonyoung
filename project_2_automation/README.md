@@ -42,8 +42,8 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
 ## 🧠 My Role & Key Contributions
 
 - API / Performance 테스트 중의 **공통 테스트 체계 설계**를 담당 
-- E2E 테스트를 포함한 **실행 환경 구성**에 기여
-- **Network 및 Parallel File System 도메인 테스트 구현을 주도적으로 담당**
+- E2E 테스트를 포함한 **실행 환경 구성** 주도적 담당
+- **Network 및 Parallel File System 도메인 테스트 구현**을 담당**
 
 > E2E 테스트는 API 테스트의 신뢰성 확보를 우선 전략으로 두고,  
 > 사용자 흐름 검증을 위한 **보조 수단으로 부분 적용**했습니다.
