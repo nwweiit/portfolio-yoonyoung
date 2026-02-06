@@ -1,0 +1,190 @@
+pipeline {
+    agent any
+
+    stages {
+
+        // ❌ 워크스페이스 클린 비활성화 (발표용 안정성 확보)
+        // stage('Clean Workspace (Before)') {
+        //     steps {
+        //         cleanWs()
+        //     }
+        // }
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Run API Functional Tests (Serial)') {
+            stages {
+
+                // stage('API - BlockStorage') {
+                //     steps {
+                //         withCredentials([
+                //             string(credentialsId: 'ZONE_ID', variable: 'ZONE_ID'),
+                //             string(credentialsId: 'ECI_ACCESS_TOKEN', variable: 'ECI_ACCESS_TOKEN')
+                //         ]) {
+                //             sh '''
+                //             set -e
+                //             cd project_root
+                //             . .venv/bin/activate
+                //             pytest tests/api/blockstorage -v \
+                //               --alluredir=allure-results/api_blockstorage
+                //             '''
+                //         }
+                //     }
+                // }
+
+                stage('API - Compute') {
+                    steps {
+                        withCredentials([
+                            string(credentialsId: 'ZONE_ID', variable: 'ZONE_ID'),
+                            string(credentialsId: 'ECI_ACCESS_TOKEN', variable: 'ECI_ACCESS_TOKEN')
+                        ]) {
+                            sh '''
+                            set -e
+                            cd project_root
+                            . .venv/bin/activate
+                            pytest tests/api/compute -v \
+                              --alluredir=allure-results/api_compute
+                            '''
+                        }
+                    }
+                }
+
+                stage('API - Network') {
+                    steps {
+                        withCredentials([
+                            string(credentialsId: 'ZONE_ID', variable: 'ZONE_ID'),
+                            string(credentialsId: 'ECI_ACCESS_TOKEN', variable: 'ECI_ACCESS_TOKEN')
+                        ]) {
+                            sh '''
+                            set -e
+                            cd project_root
+                            . .venv/bin/activate
+                            pytest tests/api/network -v \
+                              --alluredir=allure-results/api_network
+                            '''
+                        }
+                    }
+                }
+
+                stage('API - Object') {
+                    steps {
+                        withCredentials([
+                            string(credentialsId: 'ZONE_ID', variable: 'ZONE_ID'),
+                            string(credentialsId: 'ECI_ACCESS_TOKEN', variable: 'ECI_ACCESS_TOKEN')
+                        ]) {
+                            sh '''
+                            set -e
+                            cd project_root
+                            . .venv/bin/activate
+                            pytest tests/api/object -v \
+                              --alluredir=allure-results/api_object
+                            '''
+                        }
+                    }
+                }
+
+                stage('API - Home') {
+                    steps {
+                        withCredentials([
+                            string(credentialsId: 'ZONE_ID', variable: 'ZONE_ID'),
+                            string(credentialsId: 'ECI_ACCESS_TOKEN', variable: 'ECI_ACCESS_TOKEN')
+                        ]) {
+                            sh '''
+                            set -e
+                            cd project_root
+                            . .venv/bin/activate
+                            pytest tests/api/test_home.py -v \
+                              --alluredir=allure-results/api_home
+                            '''
+                        }
+                    }
+                }
+
+                stage('API - Infra') {
+                    steps {
+                        withCredentials([
+                            string(credentialsId: 'ZONE_ID', variable: 'ZONE_ID'),
+                            string(credentialsId: 'ECI_ACCESS_TOKEN', variable: 'ECI_ACCESS_TOKEN')
+                        ]) {
+                            sh '''
+                            set -e
+                            cd project_root
+                            . .venv/bin/activate
+                            pytest tests/api/test_infra.py -v \
+                              --alluredir=allure-results/api_infra
+                            '''
+                        }
+                    }
+                }
+
+                stage('API - ParallelFileSystem') {
+                    steps {
+                        withCredentials([
+                            string(credentialsId: 'ZONE_ID', variable: 'ZONE_ID'),
+                            string(credentialsId: 'ECI_ACCESS_TOKEN', variable: 'ECI_ACCESS_TOKEN')
+                        ]) {
+                            sh '''
+                            set -e
+                            cd project_root
+                            . .venv/bin/activate
+                            pytest tests/api/test_parallelfilesystem.py -v \
+                              --alluredir=allure-results/api_pfs
+                            '''
+                        }
+                    }
+                }
+            }
+        }
+
+        // ❌ 성능 테스트 비활성화 (사이트 이슈)
+        /*
+        stage('Run Performance Tests (Parallel)') {
+            parallel {
+                ...
+            }
+        }
+        */
+
+        stage('Run E2E Tests') {
+            steps {
+                withCredentials([
+                    string(credentialsId: 'ZONE_ID', variable: 'ZONE_ID'),
+                    string(credentialsId: 'ECI_ACCESS_TOKEN', variable: 'ECI_ACCESS_TOKEN')
+                ]) {
+                    sh '''
+                    set -e
+                    cd project_root
+                    . .venv/bin/activate
+                    pytest tests/e2e -v \
+                      --alluredir=allure-results/e2e
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            allure(results: [[path: 'project_root/allure-results']])
+
+            withCredentials([
+                string(credentialsId: 'ZONE_ID', variable: 'ZONE_ID'),
+                string(credentialsId: 'ECI_ACCESS_TOKEN', variable: 'ECI_ACCESS_TOKEN')
+            ]) {
+                sh '''
+                cd project_root
+                . .venv/bin/activate
+                export PYTHONPATH="$(pwd)"
+                python performance/cleanup/cleanup_entry.py || true
+                '''
+            }
+
+            archiveArtifacts artifacts: 'project_root/performance/result/*.jtl', fingerprint: true
+            archiveArtifacts artifacts: 'project_root/performance/report/**', fingerprint: true
+        }
+    }
+}
