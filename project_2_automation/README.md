@@ -38,36 +38,12 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
 - E2E Tests
   - Core VM & Resource Lifecycle Covered
  
-## 🖥️ Test Strategy Highlights
-
-### 📐 Resource Dependency & Fixture-based Test Design
-
-본 프로젝트의 테스트 대상 리소스(Network, Storage, Compute)는 **계층적 의존 관계를 가지며, 공용 테스트 환경 특성상 지속적 유지가 불가능**했습니다.
-→ 각 테스트가 반드시 다음 원칙을 따르도록 설계했습니다.
-
-이를 통해 테스트 간 간섭을 방지하고 반복 실행 가능한 **상태 격리(State-isolated) 테스트 환경**을 구축했습니다.
-
-- 전체 Test에서 Resource dependency 해결을 위해
-  - 모든 테스트는 생성 → 검증 → 정리(Cleanup)를 자체적으로 책임지도록 설계
-
-- API Tests:
-  - Stateless API 중심으로 병렬 실행
-  - Resource dependency는 fixture lifecycle 구조 표준화로 관리
-
-- Performance Tests:
-  - GET: Load / Spike
-  - POST: Soak only (stateful & resource-intensive)
-  - Resource dependency는 setup과 teardown 단계를 거치고, clean up으로 safety net 구축
-
-- E2E Tests:
-  - User flow 신뢰성 확보를 위해 순차 실행
-  - Resource dependency는 단계별로 생성-삭제를 반복하며 관리 
-
 
 ## 🧠 My Role & Key Contributions
 
-API / Performance 테스트 전반의 **공통 테스트 체계 설계**와 E2E 테스트를 포함한 **실행 환경 구성**에 기여했으며,<br>  
-**Network 및 Parallel File System 도메인 테스트 구현을 주도적으로 담당**했습니다.<br>
+- API / Performance 테스트 중의 **공통 테스트 체계 설계**를 담당 
+- E2E 테스트를 포함한 **실행 환경 구성**에 기여
+- **Network 및 Parallel File System 도메인 테스트 구현을 주도적으로 담당**
 
 > E2E 테스트는 API 테스트의 신뢰성 확보를 우선 전략으로 두고,  
 > 사용자 흐름 검증을 위한 **보조 수단으로 부분 적용**했습니다.
@@ -160,6 +136,35 @@ API / Performance 테스트 전반의 **공통 테스트 체계 설계**와 E2E 
 - 향후 회귀 테스트 및 품질 개선 논의에 활용 가능한 기준 자료로 활용 가능
 
 </details>
+
+
+ 
+## 🖥️ Test Strategy Highlights
+
+### 📐 Resource Dependency & Fixture-based Test Design
+
+본 프로젝트의 테스트 대상 리소스(Network, Storage, Compute)는 **계층적 의존 관계를 가지며, 공용 테스트 환경 특성상 지속적 유지가 불가능**했습니다.
+→ 각 테스트가 반드시 다음 원칙을 따르도록 설계했습니다.
+
+이를 통해 테스트 간 간섭을 방지하고 반복 실행 가능한 **상태 격리(State-isolated) 테스트 환경**을 구축했습니다.
+
+- 전체 Test에서 Resource dependency 해결을 위해
+  - 모든 테스트는 생성 → 검증 → 정리(Cleanup)를 자체적으로 책임지도록 설계
+
+- API Tests:
+  - Stateless API 중심으로 병렬 실행
+  - Resource dependency는 fixture lifecycle 구조 표준화로 관리
+
+- Performance Tests:
+  - GET: Load / Spike
+  - POST: Soak only (stateful & resource-intensive)
+  - Resource dependency는 setup과 teardown 단계를 거치고, clean up으로 safety net 구축
+  - Load–Spike–Load 순서로 실행하여 공용 클라우드 환경에서의 **일시적 부하 이후 자동 회복 능력**을 검증
+
+- E2E Tests:
+  - User flow 신뢰성 확보를 위해 순차 실행
+  - Resource dependency는 단계별로 생성-삭제를 반복하며 관리 
+
 
 
 ## 🎯 Troubleshooting & Key Design Decisions
