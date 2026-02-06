@@ -190,7 +190,7 @@ CI 환경에서 **실행 → 검증 → 리포팅**까지 연결함으로써
   → 실제 프로젝트 당시 사용된 원본 팀 문서  
 - 📁 Domain별 상세 README  
   → API / Performance / E2E 세부 설계 및 실행 방식<br>
-  -[API README](project_2_automation/docs/reports/legacy_project_api_readme.md)
+  -[API README](legacy_project_api_readme.md)
 
 
 
