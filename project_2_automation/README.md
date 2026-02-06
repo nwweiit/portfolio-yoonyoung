@@ -104,4 +104,10 @@ API / Performance 테스트 전반의 **공통 테스트 체계 설계** 와 E2E
 </details>
 
 
+## 📎 Evidence & Reports
+
+- 📄 **Test Result Report (Markdown)**  
+  → 자동화 범위, 성능 판단, 실패 분석 요약  
+  🔗 docs/reports/test_result_report.md
+
 
