@@ -98,11 +98,11 @@
 
 하위 리스트에서 각 테스트 상세 README를 확인 하실 수 있습니다.
 
-[🔗API Tests](project_root/tests/api/README.md)
+[🔗API Tests](legacy_project_api_readme.md)
 
-[🔗Performance Tests](project_root/performance/README.md)
+[🔗Performance Tests](legacy_project_performance_readme.md)
 
-[🔗E2E Tests](project_root/tests/e2e/README.md)
+[🔗E2E Tests](legacy_project_e2e_readme.md)
 
 <br>
 
