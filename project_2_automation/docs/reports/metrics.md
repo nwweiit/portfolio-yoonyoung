@@ -1,7 +1,7 @@
 <table align="center">
   <tr>
     <td align="center">
-      <img src="assets/images/project_result/project2_2.png" width="300">
+      <img src="../../../assets/images/project_result/project2_2.png" width="300">
       <br>
       <sub>자동화 결함 감소 추이</sub>
     </td>
