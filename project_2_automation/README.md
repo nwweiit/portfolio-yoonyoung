@@ -47,7 +47,8 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
 
 이를 통해 테스트 간 간섭을 방지하고 반복 실행 가능한 **상태 격리(State-isolated) 테스트 환경**을 구축했습니다.
 
-- 전체 Test에서 Resource dependency 해결을 위해 
+- 전체 Test에서 Resource dependency 해결을 위해
+  - 모든 테스트는 생성 → 검증 → 정리(Cleanup)를 자체적으로 책임지도록 설계
 
 - API Tests:
   - Stateless API 중심으로 병렬 실행
