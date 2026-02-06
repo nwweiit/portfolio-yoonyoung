@@ -1,9 +1,43 @@
-# Project 2 – API & Performance Test Automation
+# Project 2 – API & Performance & E2E Test Automation
 
 ## 🔎 Project Overview
 
 **ECI라는 클라우드 인프라 관리 서비스**를 인증, 환경, 성능을 고려해 **테스트 자동화 체계를 설계**하고<br>
 CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 목표로 한 프로젝트입니다.
+
+- 테스트 레이어: API / Performance / E2E
+- 주요 초점:
+  - 인증·환경·리소스 의존성을 고려한 테스트 구조
+  - 공용 테스트 환경에서의 안정적인 성능 테스트 설계
+ 
+## 📊 Project Results (Summary)
+
+- API Tests
+  - Total: 158
+  - Automated: 137 (86.7%)
+  - Parallel Execution: 6 workers
+  - Avg Runtime: ~3 min
+
+- Performance Tests
+  - Stable: 800 / 30 / 10
+  - Upper Bound: 1100 / 40 / 30
+  - Stress: 1300 / 40 / 30
+
+- E2E Tests
+  - Core VM & Resource Lifecycle Covered
+ 
+## 🖥️ Test Strategy Highlights
+
+- API Tests:
+  - Stateless API 중심으로 병렬 실행
+  - Resource dependency는 fixture lifecycle로 관리
+
+- Performance Tests:
+  - GET: Load / Spike
+  - POST: Soak only (stateful & resource-intensive)
+
+- E2E Tests:
+  - User flow 신뢰성 확보를 위해 순차 실행
 
 
 ## 🧠 My Role & Key Contributions
@@ -106,10 +140,13 @@ API / Performance 테스트 전반의 **공통 테스트 체계 설계** 와 E2E
 
 ## 📎 Evidence & Reports
 
-- 📄 **Test Result Report (Markdown)**  
+- **Test Result Report (Markdown)**  
   → 자동화 범위, 성능 판단, 실패 분석 요약  
   🔗 [ECI_Test_Result_Report_Summary.md](docs/reports/ECI_Test_Result_Report_Summary.md)
 
 
+## 🎯 Trouble shooting & Design Decisions
+
+- **
 
 
