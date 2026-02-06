@@ -41,7 +41,7 @@
 | DELETE | /block-storage/block-storage | - | id(UUID),status | 200 |
 
 - **전체 API 명세서 미리보기**
-<img src="assets/images/project_result/api_spec.png" width="70%"/>
+<img src="../../../assets/images/project_result/api_spec.png" width="70%"/>
 
 <br><br>
 
