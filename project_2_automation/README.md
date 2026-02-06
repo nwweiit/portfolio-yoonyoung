@@ -226,7 +226,7 @@ Jenkins CI 환경에서 `pytest + Allure` 자동화 파이프라인을 구성하
 - 발표·시연 환경에서도 일관된 결과 보장
 - “이상적인 CI”보다 “현실적인 CI” 설계 경험 축적
   
-🔗[CI 환경 구성 및 Jenkins 안정화 이슈](docs/troubleshooting/CI_enviroment_and_Jenkinsfile.md)
+🔗[CI 환경 구성 및 Jenkins 안정화 이슈](docs/troubleshooting/CI_environment_and_Jenkinsfile.md)
 
 </details>
 
@@ -258,7 +258,7 @@ Jenkins CI 환경에서 `pytest + Allure` 자동화 파이프라인을 구성하
 <details>
 <summary><strong> 5️⃣ 로컬 / CI 실행 환경 차이로 인한 성능 테스트 자동화 스크립트 실행 이슈 </strong></summary>
   
-🔗[로컬 / CI 실행 환경 차이로 인한 성능 테스트 자동화 스크립트 실행 이슈](docs/troubleshooting/local_ci_execution_entreypoint_issue.md)
+🔗[로컬 / CI 실행 환경 차이로 인한 성능 테스트 자동화 스크립트 실행 이슈](docs/troubleshooting/local_ci_execution_entrypoint_issue.md)
 
 </details>
 
