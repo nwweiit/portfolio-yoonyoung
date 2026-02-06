@@ -60,7 +60,7 @@
 
 스크린샷으로 확인하거나, 🔗[전체 API TC  보기](https://docs.google.com/spreadsheets/d/1e8LNYk1bJ4Kj9FAFixmPWQUegHEZanXB-SdNI_wVGUc/edit?pli=1&gid=1900619120#gid=1900619120)에서 자세히 확인할 수 있습니다.
 
-<img src="/uploads/2e6efb316a20b4a15193af56251050d5/스크린샷_2026-01-05_165954.png" width="70%"/>
+<img src="../../../assets/images/project_result/api_tc.png" width="70%"/>
 
 
 <br><br>
