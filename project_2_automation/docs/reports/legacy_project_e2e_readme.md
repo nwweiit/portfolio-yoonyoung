@@ -15,7 +15,7 @@
 # ▪️테스트 케이스
 [🔗전체 E2E 테스트케이스 보러가기](https://docs.google.com/spreadsheets/d/1e8LNYk1bJ4Kj9FAFixmPWQUegHEZanXB-SdNI_wVGUc/edit?gid=848435595#gid=848435595)
 
-<img src="/uploads/306c0bee391effeb68a8bc5d5cf37e0d/화면_캡처_2026-01-05_202924.jpg" width="70%"/>
+<img src="../../../assets/images/project_result/e2e_tc.png" width="70%"/>
 
 # ▪️E2E 테스트 관련 디렉토리 구조
 
@@ -45,4 +45,4 @@
 |테스트 완료 시간 | 3분11초|
 
 서버 불안정으로 인해 실패 케이스가 2개 있음
- * [🔗Allure 결과 리포트](http://127.0.0.1:5500/project_root/reports/allure-report/index.html)
+ * [🔗Allure 결과 리포트 Jenkins에서 보기](http://127.0.0.1:5500/project_root/reports/allure-report/index.html)
