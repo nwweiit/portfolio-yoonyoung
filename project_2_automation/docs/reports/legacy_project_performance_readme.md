@@ -129,7 +129,7 @@ performance/
 **📎 [전체 성능 테스트 케이스](https://docs.google.com/spreadsheets/d/1e8LNYk1bJ4Kj9FAFixmPWQUegHEZanXB-SdNI_wVGUc/edit?gid=1360156691#gid=1360156691)** 에서 더 자세히 확인할 수 있습니다.
 > 
 
-![전체 성능 테스트 케이스](/uploads/95c70c13467e9817c31fec93e4c8a44e/전체_성능테스트_케이스.png)
+![전체 성능 테스트 케이스](../../../assets/images/project_result/performance_tc.png)
 ### 
 
 ---
@@ -236,7 +236,7 @@ py performance/scripts/analyze_result.py performance/result/ct_vm_get_load-250.j
 
 ### 📸 Load Test 실행 결과 (ct_vm_get_load.jmx)
 
-![SLA_PASS](/uploads/b9fdd1d634ce3a11f72f885ad039ca19/SLA_PASS.png)
+![SLA_PASS](../../../assets/images/performance_result/sla_pass.png)
 
 ✅ **SLA 충족 시 → PASS**
 
@@ -244,7 +244,7 @@ py performance/scripts/analyze_result.py performance/result/ct_vm_get_load-250.j
 
 ### 📸 Load Test 실행 결과 (SLA 미충족 사례)
 
-![SLA_FAIL](/uploads/f5517df5d1dd390dbe4236ef15d21beb/SLA_FAIL.png)
+![SLA_FAIL](../../../assets/images/performance_result/sla_fail.png)
 
 ❌ **SLA 미충족 시 → ERROR**
 
