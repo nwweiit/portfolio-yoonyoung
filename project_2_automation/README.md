@@ -284,3 +284,20 @@ Jenkins CI 환경에서 `pytest + Allure` 자동화 파이프라인을 구성하
 </details>
 
 
+
+## 📁 Code Ownership & Implementation
+
+본 리포지토리에는  
+**실제 프로젝트에서 제가 단독 또는 주도적으로 작성한 코드만 선별하여 포함**했습니다.
+
+- API 테스트: Network / Parallel File System 도메인
+- 성능 테스트 자동화:
+  - JMeter 실행 스크립트
+  - 결과 검증 Python 로직
+  - Load–Spike–Load 실행 오케스트레이션 스크립트
+- pytest fixture 기반 리소스 lifecycle 관리
+- Jenkins CI 파이프라인 구성 및 테스트 단계 설계
+
+👉 상세 설계 의도는 아래 문서에서 확인할 수 있습니다.
+- 🔗 [로컬 내 성능 테스트 시스템](docs/design/run_all_on_local_sh_design.md)
+- 🔗 [docs/troubleshooting/pytest_fixture_lifecycle_and_cleanup.md`
