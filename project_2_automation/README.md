@@ -39,7 +39,20 @@ API/성능/E2E 세 분야의 '네트워크', '병렬파일시스템' 도메인 �
 
 </details>
   
-- JMeter 기반 **성능 테스트 자동화 파이프라인 구축**
+<details>
+<summary>JMeter 기반 성능 테스트 자동화 파이프라인 구축</summary>
+
+**기여 내용**
+- JMeter .jmx 실행을 위한 run_jmeter.sh 작성
+- 결과 .jtl 파일을 검증하는 Python 스크립트 구현
+- 두가지를 한번에 자동실행할 수 있는 run_all_on_local.sh 작성
+- Jenkins에서 성능 테스트 자동 실행 가능하도록 구성
+
+**결과**
+- 성능 테스트 실행 및 결과 검증 자동화
+- 반복 실행 가능성 확보
+</details>
+
 - 부하 실험을 통한 **성능 한계·안정 구간 도출**
 - Jenkins + Allure를 활용한 **CI 기반 테스트 결과 리포팅**
 - 결과 보고서 작성
