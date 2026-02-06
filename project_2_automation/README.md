@@ -162,6 +162,8 @@ API / Performance 테스트 전반의 **공통 테스트 체계 설계** 와 E2E
 
 ## 🎯 Trouble shooting & Design Decisions
 
+### ⭐ 대표 트러블슈팅 (Core Design Decisions)
+
 <details>
 <summary><strong>1️⃣ OAuth 기반 인증 구조에서 API 토큰 전략 전환 이슈</strong></summary>
 
@@ -251,6 +253,7 @@ Jenkins CI 환경에서 `pytest + Allure` 자동화 파이프라인을 구성하
 
 </details>
 
+### 📌 추가 트러블슈팅 (Implementation / Edge Cases)
 
 <details>
 <summary><strong> 5️⃣ 로컬 / CI 실행 환경 차이로 인한 성능 테스트 자동화 스크립트 실행 이슈 </strong></summary>
