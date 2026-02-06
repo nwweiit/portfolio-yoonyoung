@@ -28,16 +28,27 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
  
 ## 🖥️ Test Strategy Highlights
 
+### 🔗 Resource Dependency & Fixture-based Test Design
+
+본 프로젝트의 테스트 대상 리소스는 Network, Storage, Compute 등 **계층적 의존 관계**를 가지며 동시에 지속적 유지가 불가능한 상황
+→ 각 테스트가 반드시 다음 원칙을 따르도록 설계했습니다.
+
+이를 통해 테스트 간 간섭을 방지하고 반복 실행 가능한 **상태 격리(State-isolated) 테스트 환경**을 구축했습니다.
+
+- 전체 Test에서 Resource dependency 해결을 위해 
+
 - API Tests:
   - Stateless API 중심으로 병렬 실행
-  - Resource dependency는 fixture lifecycle로 관리
+  - Resource dependency는 fixture lifecycle 구조 표준화로 관리
 
 - Performance Tests:
   - GET: Load / Spike
   - POST: Soak only (stateful & resource-intensive)
+  - Resource dependency는 setup과 teardown 단계를 거치고, clean up으로 safety net 구축
 
 - E2E Tests:
   - User flow 신뢰성 확보를 위해 순차 실행
+  - Resource dependency는 단계별로 생성-삭제를 반복하며 관리 
 
 
 ## 🧠 My Role & Key Contributions
@@ -140,10 +151,14 @@ API / Performance 테스트 전반의 **공통 테스트 체계 설계** 와 E2E
 
 ## 📎 Evidence & Reports
 
-- **Test Result Report (Markdown)**  
+- 🔗 [ECI_Test_Result_Report_Summary](docs/reports/ECI_Test_Result_Report_Summary.md)
   → 자동화 범위, 성능 판단, 실패 분석 요약  
-  🔗 [ECI_Test_Result_Report_Summary.md](docs/reports/ECI_Test_Result_Report_Summary.md)
+  
+- 🔗 [Metrics & Visual Evidence](docs/reports/metrics.md)
+  → 테스트 결과, 성능 지표, 실행 증거를 **포트폴리오 관점에서 요약**
 
+- 🔗 [legacy project main README](docs/reports/legacy_project_main_readme.md)
+  → 실제 프로젝트 진행 당시 사용된 **원본 팀 문서**
 
 ## 🎯 Trouble shooting & Design Decisions
 
