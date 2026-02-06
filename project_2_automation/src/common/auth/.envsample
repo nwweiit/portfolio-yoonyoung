@@ -1,0 +1,17 @@
+##환경변수 파일위치 : project_root/.env
+
+##파일 설정 LF 변경 필요
+
+##로그인을 위한 계정정보
+
+ECI_USERNAME=이메일 주소(xxxxxx@xxxxxx.com)
+ECI_PASSWORD=비밀번호
+
+##발급받아온 토큰을 자동으로 저장하는 용도 
+ECI_ACCESS_TOKEN=
+
+##JMeter 실행파일 경로
+JMETER_BIN=경로지정(역슬래시 금지)
+
+##존 아이디 (ZONE_ID) 
+ZONE_ID=존 아이디 입력
