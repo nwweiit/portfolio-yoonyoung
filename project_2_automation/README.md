@@ -10,18 +10,7 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
   - 인증·환경·리소스 의존성을 고려한 테스트 구조
   - 공용 테스트 환경에서의 안정적인 성능 테스트 설계
  
-## 📎 Evidence & Reports
 
-- 🔗 [ECI_Test_Result_Report_Summary](docs/reports/ECI_Test_Result_Report_Summary.md)
-  → 자동화 범위, 성능 판단, 실패 분석 요약  
-  
-- 🔗 [Metrics & Visual Evidence](docs/reports/metrics.md)
-  → 테스트 결과, 성능 지표, 실행 증거를 **포트폴리오 관점에서 요약**
-
-- 🔗 [legacy project main README](docs/reports/legacy_project_main_readme.md)
-  → 실제 프로젝트 진행 당시 사용된 **원본 팀 문서**
-
- 
 ## 📊 Project Results (Summary)
 
 - API Tests
@@ -43,7 +32,7 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
 
 - API / Performance 테스트 중의 **공통 테스트 체계 설계**를 담당 
 - E2E 테스트를 포함한 **실행 환경 구성** 주도적 담당
-- **Network 및 Parallel File System 도메인 테스트 구현**을 담당**
+- **Network 및 Parallel File System 도메인 테스트 구현**을 담당
 
 > E2E 테스트는 API 테스트의 신뢰성 확보를 우선 전략으로 두고,  
 > 사용자 흐름 검증을 위한 **보조 수단으로 부분 적용**했습니다.
@@ -166,6 +155,37 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
   - Resource dependency는 단계별로 생성-삭제를 반복하며 관리 
 
 
+## 📎 Evidence & Reports
+
+- 🔗 [ECI_Test_Result_Report_Summary](docs/reports/ECI_Test_Result_Report_Summary.md)
+  → 자동화 범위, 성능 판단, 실패 분석 요약  
+  
+- 🔗 [Metrics & Visual Evidence](docs/reports/metrics.md)
+  → 테스트 결과, 성능 지표, 실행 증거를 **포트폴리오 관점에서 요약**
+
+- 🔗 [legacy project main README](docs/reports/legacy_project_main_readme.md)
+  → 실제 프로젝트 진행 당시 사용된 **원본 팀 문서**
+
+ 
+
+## 📁 Code Ownership & Implementation
+
+본 리포지토리에는  
+**실제 프로젝트에서 제가 단독 또는 주도적으로 작성한 코드만 선별하여 포함**했습니다.
+
+- API 테스트: Network / Parallel File System 도메인
+- 성능 테스트 자동화:
+  - JMeter 실행 스크립트
+  - 결과 검증 Python 로직
+  - Load–Spike–Load 실행 오케스트레이션 스크립트
+- pytest fixture 기반 리소스 lifecycle 관리
+- Jenkins CI 파이프라인 구성 및 테스트 단계 설계
+
+👉 상세 설계 의도는 아래 문서에서 확인할 수 있습니다.
+- 🔗 [로컬 내 성능 테스트 시스템](docs/design/run_all_on_local_sh_design.md)
+
+
+
 
 ## 🎯 Troubleshooting & Key Design Decisions
 
@@ -283,21 +303,3 @@ Jenkins CI 환경에서 `pytest + Allure` 자동화 파이프라인을 구성하
 
 </details>
 
-
-
-## 📁 Code Ownership & Implementation
-
-본 리포지토리에는  
-**실제 프로젝트에서 제가 단독 또는 주도적으로 작성한 코드만 선별하여 포함**했습니다.
-
-- API 테스트: Network / Parallel File System 도메인
-- 성능 테스트 자동화:
-  - JMeter 실행 스크립트
-  - 결과 검증 Python 로직
-  - Load–Spike–Load 실행 오케스트레이션 스크립트
-- pytest fixture 기반 리소스 lifecycle 관리
-- Jenkins CI 파이프라인 구성 및 테스트 단계 설계
-
-👉 상세 설계 의도는 아래 문서에서 확인할 수 있습니다.
-- 🔗 [로컬 내 성능 테스트 시스템](docs/design/run_all_on_local_sh_design.md)
-- 🔗 [docs/troubleshooting/pytest_fixture_lifecycle_and_cleanup.md`
