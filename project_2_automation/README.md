@@ -257,17 +257,23 @@ Jenkins CI 환경에서 `pytest + Allure` 자동화 파이프라인을 구성하
 
 <details>
 <summary><strong> 5️⃣ 로컬 / CI 실행 환경 차이로 인한 성능 테스트 자동화 스크립트 실행 이슈 </strong></summary>
+  
 🔗[로컬 / CI 실행 환경 차이로 인한 성능 테스트 자동화 스크립트 실행 이슈](docs/troubleshooting/local_ci_execution_entreypoint_issue.md)
+
 </details>
 
 <details>
 <summary><strong> 6️⃣ 성능 테스트 설계 오류로 인한 부하 한계치 오판 이슈 </strong></summary>
+  
 🔗[성능 테스트 설계 오류로 인한 부하 한계치 오판 이슈](docs/troubleshooting/performance_load_design.md)
+
 </details>
 
 <details>
 <summary><strong> 7️⃣ MUI Autocomplete 및 Select 자동화 이슈 </strong></summary>
+  
 🔗[MUI Autocomplete 및 Select 자동화 이슈](docs/troubleshooting/mui_autocomplete_select.md)
+
 </details>
 
 
