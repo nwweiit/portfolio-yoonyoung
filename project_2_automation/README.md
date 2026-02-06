@@ -1,4 +1,4 @@
-# Project 2 – API & Performance & E2E Test Automation
+# Project 2 – API & Performance-Centered Test Automation with E2E
 
 ## 🔎 Project Overview
 
@@ -9,6 +9,18 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
 - 주요 초점:
   - 인증·환경·리소스 의존성을 고려한 테스트 구조
   - 공용 테스트 환경에서의 안정적인 성능 테스트 설계
+ 
+## 📎 Evidence & Reports
+
+- 🔗 [ECI_Test_Result_Report_Summary](docs/reports/ECI_Test_Result_Report_Summary.md)
+  → 자동화 범위, 성능 판단, 실패 분석 요약  
+  
+- 🔗 [Metrics & Visual Evidence](docs/reports/metrics.md)
+  → 테스트 결과, 성능 지표, 실행 증거를 **포트폴리오 관점에서 요약**
+
+- 🔗 [legacy project main README](docs/reports/legacy_project_main_readme.md)
+  → 실제 프로젝트 진행 당시 사용된 **원본 팀 문서**
+
  
 ## 📊 Project Results (Summary)
 
@@ -30,7 +42,7 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
 
 ### 📐 Resource Dependency & Fixture-based Test Design
 
-본 프로젝트의 테스트 대상 리소스는 Network, Storage, Compute 등 **계층적 의존 관계**를 가지며 동시에 지속적 유지가 불가능한 상황
+본 프로젝트의 테스트 대상 리소스(Network, Storage, Compute)는 **계층적 의존 관계를 가지며, 공용 테스트 환경 특성상 지속적 유지가 불가능**했습니다.
 → 각 테스트가 반드시 다음 원칙을 따르도록 설계했습니다.
 
 이를 통해 테스트 간 간섭을 방지하고 반복 실행 가능한 **상태 격리(State-isolated) 테스트 환경**을 구축했습니다.
@@ -53,8 +65,8 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
 
 ## 🧠 My Role & Key Contributions
 
-API / Performance 테스트 전반의 **공통 테스트 체계 설계** 와 E2E 테스트를 포함한 **실행 환경 구성**에 기여했으며<br>
-그중 **Network 및 Parallel File System 도메인의 테스트 구현을 주도적으로 담당**했습니다.<br>
+API / Performance 테스트 전반의 **공통 테스트 체계 설계**와 E2E 테스트를 포함한 **실행 환경 구성**에 기여했으며,<br>  
+**Network 및 Parallel File System 도메인 테스트 구현을 주도적으로 담당**했습니다.<br>
 
 > E2E 테스트는 API 테스트의 신뢰성 확보를 우선 전략으로 두고,  
 > 사용자 흐름 검증을 위한 **보조 수단으로 부분 적용**했습니다.
@@ -149,18 +161,7 @@ API / Performance 테스트 전반의 **공통 테스트 체계 설계** 와 E2E
 </details>
 
 
-## 📎 Evidence & Reports
-
-- 🔗 [ECI_Test_Result_Report_Summary](docs/reports/ECI_Test_Result_Report_Summary.md)
-  → 자동화 범위, 성능 판단, 실패 분석 요약  
-  
-- 🔗 [Metrics & Visual Evidence](docs/reports/metrics.md)
-  → 테스트 결과, 성능 지표, 실행 증거를 **포트폴리오 관점에서 요약**
-
-- 🔗 [legacy project main README](docs/reports/legacy_project_main_readme.md)
-  → 실제 프로젝트 진행 당시 사용된 **원본 팀 문서**
-
-## 🎯 Trouble shooting & Design Decisions
+## 🎯 Troubleshooting & Key Design Decisions
 
 ### ⭐ 대표 트러블슈팅 (Core Design Decisions)
 
