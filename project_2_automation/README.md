@@ -162,6 +162,46 @@ API / Performance 테스트 전반의 **공통 테스트 체계 설계** 와 E2E
 
 ## 🎯 Trouble shooting & Design Decisions
 
-- **
+<details>
+<summary><strong>1️⃣ OAuth 기반 인증 구조에서 API 토큰 전략 전환 이슈</strong></summary>
 
+**문제**  
+API 테스트 중 Selenium 기반 재로그인이 간헐적으로 발생하고, 병렬 실행이 불가능한 구조였음.
+
+**해결방법**  
+OAuth 기반 UI 로그인 구조를 분석하여 API 단독 토큰 자동화의 한계를 인정하고,  
+UI 1회 토큰 발급 + API 테스트 완전 분리 전략으로 전환.
+
+**결과**  
+- UI/API 테스트 책임 분리  
+- 병렬 실행 가능  
+- 테스트 안정성 향상
+
+🔗[OAuth 기반 인증 구조에서 API 토큰 자동화 전략 전환 이슈](docs/troubleshooting/oauth_ui_token_strategy_tradeoff.md)
+
+</details>
+
+
+<details>
+<summary><strong> 2️⃣ pytest fixture 생명주기 및 리소스 정리 안정화 이슈</strong></summary>
+
+**문제**  
+리소스 간 의존성이 강한 환경에서 fixture 기반 생성/삭제를 사용하던 중, 테스트 실패 시 리소스가 잔존하여 이후 테스트를 지속적으로 오염시키는 문제가 발생함.
+특히 `session scope fixture` 사용으로 삭제 책임이 불명확해짐.
+
+**해결방법**  
+- fixture는 리소스 생성 책임만 담당하도록 축소
+- 삭제는 별도의 `safe_delete + polling` 유틸 함수로 분리
+- 삭제 요청 이후 실제 삭제 완료를 보장하도록 구조 재설계.
+- 모든 실제 리소스 fixture를 `function scope`로 전환.
+
+**결과**  
+- 테스트 성공/실패 여부와 무관하게 리소스 정리 보장
+- 비동기 삭제로 인한 연쇄 실패 제거
+- 테스트 신뢰성과 반복 실행 안정성 향상
+- fixture scope를 “책임 경계”로 설계하는 기준 확립
+
+🔗[API 테스트에서 fixture의 생명주기와 삭제 보장 이슈](docs/troubleshooting/pytest_fixture_lifecycle_and_cleanup.md)
+
+</details>
 
