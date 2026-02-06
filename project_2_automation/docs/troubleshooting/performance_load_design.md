@@ -109,12 +109,12 @@ ramp-up을 40초로 늘린 뒤 다음과 같은 부하 구간을 단계적으로
 <table align="center">
   <tr>
     <td align="center">
-      <img src="../../assets/images/performance_result/performance_1100_40_30.png" width="350">
+      <img src="../../../assets/images/performance_result/performance_1100_40_30.png" width="350">
       <br>
       <sub>1100 / 40 / 30 (Upper)</sub>
     </td>
     <td align="center">
-      <img src="../../assets/images/performance_result/performance_1300_40_30.png" width="350">
+      <img src="../../../assets/images/performance_result/performance_1300_40_30.png" width="350">
       <br>
       <sub>1300 / 40 / 30 (Stress)</sub>
     </td>
