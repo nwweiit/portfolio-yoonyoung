@@ -13,18 +13,18 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
 
 ## 📊 Project Results (Summary)
 
-- API Tests
+- **API Tests**
   - Total: 158
   - Automated: 137 (86.7%)
   - Parallel Execution: 6 workers
   - Avg Runtime: ~3 min
 
-- Performance Tests
+- **Performance Tests**
   - Stable: 800 / 30 / 10
   - Upper Bound: 1100 / 40 / 30
   - Stress: 1300 / 40 / 30
 
-- E2E Tests
+- **E2E Tests**
   - Core VM & Resource Lifecycle Covered
  
 
@@ -140,17 +140,17 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
 - 전체 Test에서 Resource dependency 해결을 위해
   - 모든 테스트는 생성 → 검증 → 정리(Cleanup)를 자체적으로 책임지도록 설계
 
-- API Tests:
+- **API Tests**:
   - Stateless API 중심으로 병렬 실행
   - Resource dependency는 fixture lifecycle 구조 표준화로 관리
 
-- Performance Tests:
+- **Performance Tests**:
   - GET: Load / Spike
   - POST: Soak only (stateful & resource-intensive)
   - Resource dependency는 setup과 teardown 단계를 거치고, clean up으로 safety net 구축
   - Load–Spike–Load 순서로 실행하여 공용 클라우드 환경에서의 **일시적 부하 이후 자동 회복 능력**을 검증
 
-- E2E Tests:
+- **E2E Tests**:
   - User flow 신뢰성 확보를 위해 순차 실행
   - Resource dependency는 단계별로 생성-삭제를 반복하며 관리 
 
