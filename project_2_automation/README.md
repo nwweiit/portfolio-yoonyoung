@@ -28,7 +28,7 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
  
 ## 🖥️ Test Strategy Highlights
 
-### 🔗 Resource Dependency & Fixture-based Test Design
+### 📐 Resource Dependency & Fixture-based Test Design
 
 본 프로젝트의 테스트 대상 리소스는 Network, Storage, Compute 등 **계층적 의존 관계**를 가지며 동시에 지속적 유지가 불가능한 상황
 → 각 테스트가 반드시 다음 원칙을 따르도록 설계했습니다.
@@ -204,4 +204,67 @@ UI 1회 토큰 발급 + API 테스트 완전 분리 전략으로 전환.
 🔗[API 테스트에서 fixture의 생명주기와 삭제 보장 이슈](docs/troubleshooting/pytest_fixture_lifecycle_and_cleanup.md)
 
 </details>
+
+
+<details>
+<summary><strong> 3️⃣ Jenkins CI 환경에서 Python 테스트 파이프라인 안정화 이슈</strong></summary>
+
+**문제**  
+Jenkins CI 환경에서 `pytest + Allure` 자동화 파이프라인을 구성하던 중 `cleanWs()`와 네트워크 제한으로 인해 가상환경 및 패키지 설치가 간헐적으로 실패하며 
+빌드 결과가 환경 상태에 따라 달라지는 문제가 발생함.
+
+**해결방법**  
+- 매 빌드 초기화를 포기
+- VM에 사전 구성된 Python 가상환경을 재사용하는 전략으로 전환
+- Jenkins는 테스트 실행과 리포트 생성만 담당하도록 역할을 단순화
+
+**결과**  
+- CI 환경에서 테스트 실행 안정성 확보
+- 네트워크/권한 제약 환경에서도 빌드 실패 제거
+- 발표·시연 환경에서도 일관된 결과 보장
+- “이상적인 CI”보다 “현실적인 CI” 설계 경험 축적
+  
+🔗[CI 환경 구성 및 Jenkins 안정화 이슈](docs/troubleshooting/CI_enviroment_and_Jenkinsfile.md)
+
+</details>
+
+
+<details>
+<summary><strong> 4️⃣ 성능 테스트에서 teardown vs cleanup 전략 결정 이슈</strong></summary>
+
+**문제**  
+성능 테스트(JMeter) 실행 중 실패가 발생할 경우, tearDown Thread Group이 실행되지 않아 테스트 리소스가 잔존하고
+다음 테스트 실행에 영향을 주는 문제가 발생함.
+
+**해결방법**  
+- tearDown은 best-effort로 유지
+- CI 환경에서는 Jenkinsfile에서 명시적인 cleanup 로직을 별도로 실행하도록 설계
+- 로컬 실행(run_all_on_local.sh)에는 safety net으로 cleanup 단계를 추가
+
+**결과**  
+- 성능 테스트 실패 시에도 리소스 정리 보장
+- CI 환경에서 테스트 결과와 무관한 안정성 확보
+- 반복 성능 테스트 시 환경 오염 제거
+- teardown과 cleanup의 역할을 명확히 분리한 설계 확립
+  
+🔗[성능 테스트에서 teardown vs cleanup 전략 결정 이슈](docs/troubleshooting/performance_test_teardown_vs_cleanup_tradeoff.md)
+
+</details>
+
+
+<details>
+<summary><strong> 5️⃣ 로컬 / CI 실행 환경 차이로 인한 성능 테스트 자동화 스크립트 실행 이슈 </strong></summary>
+🔗[로컬 / CI 실행 환경 차이로 인한 성능 테스트 자동화 스크립트 실행 이슈](docs/troubleshooting/local_ci_execution_entreypoint_issue.md)
+</details>
+
+<details>
+<summary><strong> 6️⃣ 성능 테스트 설계 오류로 인한 부하 한계치 오판 이슈 </strong></summary>
+🔗[성능 테스트 설계 오류로 인한 부하 한계치 오판 이슈](docs/troubleshooting/performance_load_design.md)
+</details>
+
+<details>
+<summary><strong> 7️⃣ MUI Autocomplete 및 Select 자동화 이슈 </strong></summary>
+🔗[MUI Autocomplete 및 Select 자동화 이슈](docs/troubleshooting/mui_autocomplete_select.md)
+</details>
+
 
