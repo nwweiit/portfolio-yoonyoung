@@ -16,7 +16,7 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
 - **API Tests**
   - Total: 158
   - Automated: 137 (86.7%)
-  - Parallel Execution: 6 workers
+  - Parallel Execution: 6 workers *(local execution)*
   - Avg Runtime: ~3 min
 
 - **Performance Tests**
@@ -30,7 +30,7 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
 
 ## 🧠 My Role & Key Contributions
 
-- API / Performance 테스트 중의 **공통 테스트 체계 설계**를 담당 
+- API / Performance 테스트의 **공통 테스트 체계 설계**를 담당 
 - E2E 테스트를 포함한 **실행 환경 구성** 주도적 담당
 - **Network 및 Parallel File System 도메인 테스트 구현**을 담당
 
@@ -150,9 +150,24 @@ CI 환경에서 **실행 → 검증 → 리포팅까지 연결**하는 것을 �
   - Resource dependency는 setup과 teardown 단계를 거치고, clean up으로 safety net 구축
   - Load–Spike–Load 순서로 실행하여 공용 클라우드 환경에서의 **일시적 부하 이후 자동 회복 능력**을 검증
 
+
 - **E2E Tests**:
   - User flow 신뢰성 확보를 위해 순차 실행
   - Resource dependency는 단계별로 생성-삭제를 반복하며 관리 
+
+### 🔧 Parallel Execution Strategy (Design Decision)
+
+| Test Type | Local | CI | Rationale |
+|---|---|---|---|
+| API Tests | ✅ Parallel | ❌ Serial | 빠른 로컬 피드백 / CI 안정성 |
+| Performance Tests | ✅ Scripted | ❌ (조건부) | 환경 제약 및 리소스 보호 |
+| E2E Tests | ❌ Serial | ❌ Serial | 사용자 흐름 신뢰성 우선 |
+
+> 📌 CI 환경에서 테스트 실패 시 타임아웃으로 인해  
+> 전체 실행 시간이 과도하게 증가하는 문제를 완화하기 위해,  
+> **CI에서는 병렬 옵션을 비활성화**하고 실행 안정성과  
+> 시간 예측 가능성을 우선하는 전략을 채택했습니다.
+> **실행 결과 차이 최소화** 및 **실행 시간 예측 가능성 유지**
 
 
 ## 📎 Evidence & Reports
