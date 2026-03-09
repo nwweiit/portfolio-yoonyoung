@@ -45,14 +45,12 @@ API / Performance / E2E 테스트 자동화 프로젝트
 
 ## Project 1 – UI Test Automation
 
-부트캠프 초기 프로젝트로  
-Selenium 기반 UI 테스트 자동화를 처음 구조화해 본 프로젝트입니다.
+부트캠프 초기 프로젝트로 Selenium 기반 UI 테스트 자동화를 처음 구조화해 본 프로젝트
 
-Page Object Model 기반 테스트 구조를 설계하고  
-UI 테스트 자동화의 기본 구조를 구현했습니다.
+- Page Object Model 기반 테스트 구조를 설계
+- UI 테스트 자동화의 기본 구조를 구현
 
-이 프로젝트를 통해 테스트 자동화 구조의 기본 개념을 이해했고,  
-이후 Project 2에서 테스트 독립성과 환경 설계 부분을 개선하게 되었습니다.
+→ 이 프로젝트를 통해 테스트 자동화 구조의 기본 개념 이해 + Project 2에서 테스트 독립성과 환경 설계 부분을 개선
 
 🔗 [project_1_automation](project_1_automation/README.md)
 
