@@ -25,6 +25,15 @@ UI 요소 접근 로직과 테스트 로직을 분리하였으며,
 
 ---
 
+## 🧠 My Role & Key Contributions
+
+- Page Object Model 기반 UI 테스트 구조 구현
+- 테스트 구조 설계 (BasePage 클래스, conftest.py)
+- Custom Agent/Billing system 도메인 테스트 구현
+- pytest 기반 테스트 환경 구성
+
+---
+
 ## 🛠 사용 기술
 
 | 구분 | 기술 |
