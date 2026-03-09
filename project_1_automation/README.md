@@ -1,4 +1,4 @@
-# Project 1 — UI 테스트 자동화 (Selenium)
+# Project 1 — UI Test Automation in Selenium
 
 ## 📌 프로젝트 개요
 
