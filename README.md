@@ -40,7 +40,7 @@ API 테스트 자동화를 처음 구조화해 본 프로젝트입니다.
 이 프로젝트를 통해 테스트 자동화 구조의 기본 개념을 이해했고,  
 이후 Project 2에서 테스트 독립성과 환경 설계 부분을 개선하게 되었습니다.
 
-🔗 project_1_api_test
+🔗 [project_1_api_test](https://github.com/minojj/Elice-BugsHunters.git)
 
 
 ---
