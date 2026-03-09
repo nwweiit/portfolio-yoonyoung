@@ -1,0 +1,19 @@
+.env
+__pycache__/
+venv/
+.vscode/
+
+# JMeter
+jmeter.log
+
+# JMeter results (실행 산출물)
+performance/result/*
+performance/report/*
+
+# 개인별 bat 파일 (각자 로컬에서만 사용)
+performance/run_jmeter_*.bat
+performance/*_local.bat
+
+# Allure
+reports
+.allure/
