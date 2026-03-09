@@ -1,0 +1,21 @@
+##python==3.11.6
+
+##API test
+pytest==8.3.4
+requests==2.32.3
+pytest-html==4.1.1
+pytest-xdist==3.6.1
+pytest-rerunfailures==14.0
+jsonschema==4.23.0
+python-dotenv==1.0.1
+
+##Performance test
+locust==2.32.3
+
+##Selenium E2E test
+selenium==4.26.1
+webdriver-manager==4.0.2
+pytest-selenium==4.1.0
+
+##Report
+allure-pytest==2.13.5
