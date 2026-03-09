@@ -42,7 +42,7 @@ API 테스트 자동화를 처음 구조화해 본 프로젝트입니다.
 
 사이트의 '커스텀 에이전트'파트와 conftest.py를 맡아 담당했습니다.
 
-🔗 [project_1_api_test](https://github.com/minojj/Elice-BugsHunters.git)
+🔗 [project_1_automation](project_1_automation/README.md)
 
 
 ---
