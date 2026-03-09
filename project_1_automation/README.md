@@ -1,4 +1,4 @@
-# Project 1 — UI Test Automation in Selenium
+# Project 1 — UI Test Automation with Selenium
 
 ## 🔎 Project Overview
 
@@ -20,7 +20,7 @@ https://github.com/minojj/Elice-BugsHunters.git
 
 ---
 
-# 🎯 Project Target
+## 🎯 Project Goals
 
 - Selenium 기반 UI 테스트 자동화 구현
 - Page Object Model 기반 테스트 구조 설계
@@ -30,7 +30,7 @@ https://github.com/minojj/Elice-BugsHunters.git
 
 ---
 
-# 🧠 My Role
+## 🧠 My Role
 
 본 프로젝트에서 다음 영역을 담당했습니다.
 
@@ -56,12 +56,12 @@ https://github.com/minojj/Elice-BugsHunters.git
 
 ---
 
-# 🧱 Test strategy
+## 🧱 Test Strategy
 
 본 프로젝트는 **Page Object Model(POM)** 구조를 기반으로 구성되었습니다.
 
 
-## BasePage
+### BasePage
 
 모든 페이지 클래스에서 공통적으로 사용하는 기능을 제공하는 베이스 클래스입니다.
 
@@ -83,23 +83,23 @@ click_safely()
 
 ---
 
-# 🧩 Page Object
+### 🧩 Page Object
 
 각 페이지의 UI 요소와 동작을 **Page 클래스**에서 관리합니다.
 
-### 예시
+#### 예시
 - Agent Explorer 페이지  
-- Agent 생성 페이지  
-- Agent 관리 페이지  
+- My Agents 생성 페이지  
+- My Agents 관리 페이지  
 
-### Page 클래스에서는 다음을 담당합니다.
+#### Page 클래스에서는 다음을 담당합니다.
 - locator 정의  
 - 페이지 동작 메서드 구현  
 - UI 상태 검증 로직  
 
 ---
 
-# 🧪 Tests
+### 🧪 Tests
 
 `tests` 폴더에서는 실제 테스트 시나리오를 작성합니다.  
 각 테스트는 **Page Object**를 사용하여  
@@ -112,7 +112,7 @@ click_safely()
 
 ---
 
-# ⚙ 테스트 환경 구성
+### ⚙ 테스트 환경 구성
 
 `pytest` 기반 테스트 환경을 구성하기 위해  
 `conftest.py`를 사용하여 **공통 테스트 설정**을 관리했습니다.
@@ -126,7 +126,7 @@ click_safely()
 
 ---
 
-# 🔎 테스트 안정성 고려 사항
+### 🔎 테스트 안정성 고려 사항
 
 UI 자동화 테스트의 특성상, 동적 UI 동작으로 인해 테스트가 불안정해질 수 있습니다.  
 이를 해결하기 위해 다음과 같은 방법을 적용했습니다.
@@ -145,7 +145,7 @@ UI 자동화 테스트의 특성상, 동적 UI 동작으로 인해 테스트가 
 
 ---
 
-# 📋 테스트 관리
+## 📋 Test Management
 
 프로젝트 진행 과정에서 **Jira**를 활용하여 테스트 작업을 관리했습니다.
 
@@ -156,18 +156,18 @@ UI 자동화 테스트의 특성상, 동적 UI 동작으로 인해 테스트가 
 
 ---
 
-# 📈 프로젝트를 통해 얻은 경험
+## 📈 Key Learnings
 
 이 프로젝트를 통해 다음과 같은 경험을 얻었습니다.
 
 - Selenium 기반 UI 테스트 자동화 구현 경험  
 - Page Object Model 기반 테스트 구조 설계  
-- 동적 UI 환경 대응 테스트 작성  
+- UI 테스트 자동화에서 발생하는 동적 UI 문제 대응 경험 
 - pytest 기반 테스트 실행 환경 구성  
 
 ---
 
-# 💡 Reflection
+## 💡 Reflection
 
 본 프로젝트에서는 **Selenium 기반 UI 자동화를 구조화**하면서  
 Page Object Model 기반 테스트 구조를 설계했습니다.  
