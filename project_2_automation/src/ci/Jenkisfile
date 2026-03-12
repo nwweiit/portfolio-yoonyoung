@@ -16,25 +16,25 @@ pipeline {
             }
         }
 
-        stage('Run API Functional Tests (Serial)') {
-            stages {
+        stage('Run API Functional Tests (Parallel)') {
+            parallel {
 
-                // stage('API - BlockStorage') {
-                //     steps {
-                //         withCredentials([
-                //             string(credentialsId: 'ZONE_ID', variable: 'ZONE_ID'),
-                //             string(credentialsId: 'ECI_ACCESS_TOKEN', variable: 'ECI_ACCESS_TOKEN')
-                //         ]) {
-                //             sh '''
-                //             set -e
-                //             cd project_root
-                //             . .venv/bin/activate
-                //             pytest tests/api/blockstorage -v \
-                //               --alluredir=allure-results/api_blockstorage
-                //             '''
-                //         }
-                //     }
-                // }
+                stage('API - BlockStorage') {
+                    steps {
+                        withCredentials([
+                            string(credentialsId: 'ZONE_ID', variable: 'ZONE_ID'),
+                            string(credentialsId: 'ECI_ACCESS_TOKEN', variable: 'ECI_ACCESS_TOKEN')
+                        ]) {
+                            sh '''
+                            set -e
+                            cd project_root
+                            . .venv/bin/activate
+                            pytest tests/api/blockstorage -v \
+                              --alluredir=allure-results/api_blockstorage
+                            '''
+                        }
+                    }
+                }
 
                 stage('API - Compute') {
                     steps {
