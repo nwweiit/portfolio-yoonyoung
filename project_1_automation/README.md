@@ -30,6 +30,28 @@ https://github.com/minojj/Elice-BugsHunters.git
 
 ---
 
+## 📊 Test Execution Result
+
+- Total: 56
+- Passed: 56 
+- Failed: 0 
+- Success Rate: 100 %
+- Average Time: 9-10 m 
+
+- 테스트 시나리오: Agent 생성 / 수정 / 삭제 / 관리
+- 실행 환경: pytest + Selenium
+- E2E 중심의 테스트 실행을 통해 주요 사용자 흐름이 정상 동작하는지 검증
+
+<details>
+<summary><strong> 📊 Test Result </strong></summary>
+
+<img src="../assets/images/project_result/project1_pytest_result.png" width="300">
+</details>
+
+
+---
+
+
 ## 🧠 My Role
 
 본 프로젝트에서 다음 영역을 담당했습니다.
@@ -52,7 +74,7 @@ https://github.com/minojj/Elice-BugsHunters.git
 | UI Automation | Selenium WebDriver |
 | Test Structure | Page Object Model |
 | Collaboration | Jira |
-
+| Browser Automation | ChromeDriver |
 
 ---
 
@@ -92,7 +114,7 @@ click_safely()
 - My Agents 생성 페이지  
 - My Agents 관리 페이지  
 
-#### Page 클래스에서는 다음을 담당합니다.
+#### Page Object 클래스는 다음 책임을 가집니다.
 - locator 정의  
 - 페이지 동작 메서드 구현  
 - UI 상태 검증 로직  
