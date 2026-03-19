@@ -28,7 +28,7 @@
 
 ### Test Coverage
 
-- **API Test**: 130 / 158(82.3%automated)
+- **API Test**: 130 / 158 (82.3%automated)
 - **Performance Test**: 20 / 20 (100% automated)
 - **E2E Test**: 22 / 22 (100% automated)
 
@@ -43,6 +43,12 @@
 | **Stable (800/30/10)** | Avg/P95/Error Rate 기준 충족 | ✅ 운영 가능 |
 | **Upper (1100/40/30)** | 일부 SLA 초과 | ⚠️ 한계 상한 |
 | **Stress (1300/40/30)** | 다수 오류 발생 | ❌ 운영 불가 |
+
+> 초기 반복 실행을 통해 baseline 성능을 측정한 후, 해당 분포를 기준으로 SLA를 정의했습니다.<br>
+> SLA 대표 기준은 다음과 같습니다.
+>> ERROR_RATE_THRESHOLD = 0.01<br>
+>> AVG_MS_THRESHOLD = 1000<br>
+>> P95_MS_THRESHOLD = 2000<br>
 
 ### Analysis
 - 급격한 부하 증가 시 일시적 성능 저하 발생
