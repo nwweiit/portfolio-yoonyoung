@@ -57,21 +57,11 @@
 | 항목 | 수치 |
 |---|---|
 | 전체 테스트 케이스 | 158 |
-| 자동화 케이스 | 137 |
-| 자동화 비율 | **86.7%** |
+| 자동화 케이스 | 130 |
+| 자동화 비율 | **82.3%** |
 | 병렬 실행 | 6 workers |
 | 평균 실행 시간 | 약 3분 |
 
-#### 도메인별 커버리지 요약
-
-| Domain | Automation Rate |
-|---|---|
-| Home / Infra | 100% |
-| Compute | 95.7% |
-| Network | 83.9% |
-| Block Storage | 58.1% |
-| Object Storage | 98.1% |
-| Parallel File System | 100% |
 
 ---
 
