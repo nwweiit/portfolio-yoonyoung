@@ -26,17 +26,9 @@
 
 ## 2. Automation Coverage Summary
 
-### API Test Coverage
+### Test Coverage
 
-| Category | Total TC | Automated | Coverage |
-|--------|----------|-----------|----------|
-| Account / Home / Infra | 17 | 16 | 94% |
-| Compute | 23 | 22 | 95.7% |
-| Network | 31 | 26 | 83.9% |
-| Storage (Block/Object/PFS) | 87 | 73 | 83.9% |
-| **Total** | **158** | **137** | **86.7%** |
-
-### Performance / E2E
+- **API Test**: 130 / 158(82.3%automated)
 - **Performance Test**: 20 / 20 (100% automated)
 - **E2E Test**: 22 / 22 (100% automated)
 
