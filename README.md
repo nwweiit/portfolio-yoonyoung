@@ -10,7 +10,7 @@
 
 ## 🚀 Key Highlights
 
-- 137개의 API 테스트 자동화 구현 (pytest 기반)
+- 130개의 API 테스트 자동화 구현 (pytest 기반)
 - pytest-xdist 기반 병렬 실행 구조 설계
 - JMeter 기반 성능 테스트 설계 및 실행
 - Jenkins + Allure 기반 CI 테스트 파이프라인 구축
@@ -44,7 +44,7 @@
 
 **주요 내용**
 
-- 137개 API 테스트 자동화 및 병렬 실행 구조 설계
+- 130개 API 테스트 자동화 및 병렬 실행 구조 설계
 - JMeter 기반 성능 테스트 설계 (Load / Spike / Soak)
 - Jenkins + Allure 기반 CI 테스트 파이프라인 구축
 - 테스트 리소스 lifecycle 관리 및 cleanup 전략 설계
