@@ -38,7 +38,7 @@
       </ThreadGroup>
       <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET_Pip list">
-          <stringProp name="HTTPSampler.domain">portal.gov.elice.cloud</stringProp>
+          <stringProp name="HTTPSampler.domain">${__P(BASE_URL)}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/api/user/resource/network/public_ip</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
