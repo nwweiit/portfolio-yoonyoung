@@ -17,7 +17,7 @@ JMETER_BIN=경로지정(역슬래시 금지)
 ZONE_ID=존 아이디 입력
 
 ##Base URL
-BASE_URL=베이스 url 입력
+BASE_URL=도메인 입력(프로토콜 제외)
 
 ##Subnet ID
 SUBNET_ID=서브넷 아이디 입력
