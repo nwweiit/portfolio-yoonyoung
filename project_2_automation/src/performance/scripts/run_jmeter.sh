@@ -42,7 +42,10 @@ if [ "$1" = "--glob" ]; then
         -l "$RESULT_JTL" \
         -e -o "$REPORT_DIR" \
         -JECI_ACCESS_TOKEN="$ECI_ACCESS_TOKEN" \
-        -JBUILD_ID="$BUILD_ID"
+        -JBUILD_ID="$BUILD_ID" \
+        -JZONE_ID="$ZONE_ID" \
+        -JBASE_URL="$BASE_URL" \
+        -JSUBNET_ID="$SUBNET_ID"
       then
         echo "❌ JMX FAILED (SKIPPED): ${JMX_NAME}"
       fi
@@ -53,7 +56,10 @@ if [ "$1" = "--glob" ]; then
         -l "$RESULT_JTL" \
         -e -o "$REPORT_DIR" \
         -JECI_ACCESS_TOKEN="$ECI_ACCESS_TOKEN" \
-        -JBUILD_ID="$BUILD_ID"
+        -JBUILD_ID="$BUILD_ID" \
+        -JZONE_ID="$ZONE_ID" \
+        -JBASE_URL="$BASE_URL" \
+        -JSUBNET_ID="$SUBNET_ID"
       then
         echo "❌ JMX FAILED (SKIPPED): ${JMX_NAME}"
       fi
@@ -102,7 +108,10 @@ for JMX_NAME in "${JMX_NAMES[@]}"; do
       -l "$RESULT_JTL" \
       -e -o "$REPORT_DIR" \
       -JECI_ACCESS_TOKEN="$ECI_ACCESS_TOKEN" \
-      -JBUILD_ID="$BUILD_ID"
+      -JBUILD_ID="$BUILD_ID" \
+      -JZONE_ID="$ZONE_ID" \
+      -JBASE_URL="$BASE_URL" \
+      -JSUBNET_ID="$SUBNET_ID"
   else
     echo "[INFO] Detected Unix-like JMeter"
     "$JMETER_BIN" -n \
@@ -110,6 +119,9 @@ for JMX_NAME in "${JMX_NAMES[@]}"; do
       -l "$RESULT_JTL" \
       -e -o "$REPORT_DIR" \
       -JECI_ACCESS_TOKEN="$ECI_ACCESS_TOKEN" \
-      -JBUILD_ID="$BUILD_ID"
+      -JBUILD_ID="$BUILD_ID" \
+      -JZONE_ID="$ZONE_ID" \
+      -JBASE_URL="$BASE_URL" \
+      -JSUBNET_ID="$SUBNET_ID"
   fi
 done
