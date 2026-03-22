@@ -42,7 +42,7 @@
       </ThreadGroup>
       <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET_VNET list">
-          <stringProp name="HTTPSampler.domain">portal.gov.elice.cloud</stringProp>
+          <stringProp name="HTTPSampler.domain">${__P(BASE_URL)}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/api/user/resource/network/virtual_network</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
