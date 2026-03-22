@@ -1,3 +1,5 @@
+from config import BASE_URL
+
 class APIClient:
     def __init__(self, access_token: str | None):
         self.session = create_session()
@@ -5,8 +7,10 @@ class APIClient:
 
     def _headers(self):
         headers = {
-            "Content-Type": "application/json",
-            "Host": "portal.gov.example.cloud"}
+            "Content-Type": "application/json"}
+
+        if BASE_URL:
+            headers["Host"] = BASE_URL
         if self.access_token:
             headers["Authorization"] = f"Bearer {self.access_token}"
         return headers
