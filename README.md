@@ -1,4 +1,4 @@
-# QA / SDET Portfolio
+# Automation QA Portfolio
 
 **재현 가능하고 안정적으로 실행되는 테스트 환경을 설계하는 QA 엔지니어**입니다.
 
@@ -8,7 +8,7 @@
 
 ---
 
-## 🚀 Key Highlights
+## Key Highlights
 
 - 130개의 API 테스트 자동화 구현 (pytest 기반)
 - pytest-xdist 기반 병렬 실행 구조 설계
@@ -19,7 +19,7 @@
 
 ---
 
-## 🎯 Core Focus
+## Core Focus
 
 제가 집중하고 있는 QA 영역입니다.
 
@@ -31,10 +31,10 @@
 
 ---
 
-## 📦 Projects
+## Projects
 
 
-### 🔹 Project 2 – ECI Test Automation
+### Project 2 – ECI Test Automation
 
 공용 클라우드 환경에서 발생하는  
 **리소스 의존성과 인증 제약을 고려하여 API / Performance 테스트 자동화 구조를 설계한 프로젝트입니다.**
@@ -55,7 +55,7 @@
 
 ---
 
-### 🔹 Project 1 – UI Test Automation
+### Project 1 – UI Test Automation
 
 Selenium 기반 UI 테스트 자동화를 처음 구조화한 프로젝트입니다.
 
@@ -72,28 +72,20 @@ UI 테스트 자동화의 기본 구조를 구현했습니다.
 
 ---
 
-## 🛠 Skills
+## Skills
 
-### Test Automation
-- Python
-- pytest
-- Selenium
+### Test Automation : Python / pytest / Selenium
 
-### Performance Testing
-- JMeter
+### Performance Testing : JMeter
 
-### CI / DevOps
-- Jenkins
-- Git / GitHub
+### CI / DevOps : Jenkins / Git 
 
-### Reporting & Analysis
-- Allure
+### Reporting & Analysis : Allure
 
-### Collaboration & Issue Tracking
-- Jira
+### Collaboration & Issue Tracking : Jira
 
 ---
 
-## 📫 Contact
+## Contact
 
 nwweiit@gmail.com
